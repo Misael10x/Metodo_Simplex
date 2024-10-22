@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado Simplex</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="mt-5">Resultado del Método Simplex:</h2>
+        <p>Status: {{ resultado.message }}</p>
+        <p>Valor de la función objetivo: {{ resultado.fun }}</p>
+        <h3 class="mt-4">Tablas Intermedias:</h3>
+        {% for tabla in tablas %}
+            <h4>Tabla {{ loop.index }}:</h4>
+            {{ tabla.to_html(classes='table table-bordered') | safe }}
+        {% endfor %}
+    </div>
+</body>
+</html>
